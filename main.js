@@ -1,5 +1,6 @@
 const dashedpath = document.getElementById('animatedPath');
 const scrollingDiv = document.getElementById('footer');
+const navDiv = document.getElementById('nav');
 const length = dashedpath.getTotalLength();
 const questions = document.querySelectorAll('.question');
 
@@ -17,9 +18,13 @@ let lastScrollPosition = 0;
  
        if (currentScrollPosition > lastScrollPosition) {
          scrollingDiv.style.display = 'block';
+        //  navDiv.style.position = "fixed";
+        //  navDiv.style.background = "#242348";
         //  scrollingDiv.classList.add('show');
        } else {
          scrollingDiv.style.display = 'none';
+        //  navDiv.style.position = "relative";
+        //  navDiv.style.background = "none";
         //  scrollingDiv.classList.remove('show');
        }
  

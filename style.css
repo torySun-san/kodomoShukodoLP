@@ -132,6 +132,11 @@ header h3{
     align-items: center;
     padding: 2vh 3vh;
 }
+nav{
+  position: relative;
+  width: 100%;
+  z-index: 999;
+}
 .logo svg{
   width: 70px;
 }
@@ -515,5 +520,22 @@ h2{
 }
 .meal .owl-carousel {
   margin-top: 4vh;
+}
+}
+
+@media screen and (max-width: 345px) {
+
+h3{
+  font-size: 19px;
+}
+h2{
+  font-size: 17px;
+}
+.meal .owl-carousel {
+  margin-top: 4vh;
+}
+#sponser {
+  width: 200px;
+  margin-bottom: 2vh;
 }
 }

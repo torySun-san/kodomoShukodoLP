@@ -1,0 +1,519 @@
+
+/* 
+Order of section in stylesheet
+  1) importing files
+  2) CSS Reset
+  3)CSS variables
+  4)Keyframes 
+  5)Heading section
+  6)Footer section
+  7)About section
+  8)Meal Section
+  9)About Sun co., ltd
+*/
+/* All the imports */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,100&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* Variables */
+:root {
+  --black: #000;
+  --orange: #F39800;
+  --prefferedOrange: #FE5D02;
+  --gray: #999;
+  --text-arrow-space: 16px;
+  --shaft-width: 64px;
+  --shaft-thickness: 1px;
+  --arrow-head-width: 8px;
+  --arrow-head-thickness: var(--shaft-thickness);
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Keyframes starts*/
+
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes welcome {
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(-120vw);
+}
+100% {
+    transform: translateX(130vw);
+}
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100%); 
+  }
+  to {
+    transform: translateY(0); 
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(0); 
+  }
+  to {
+    transform: translateY(-1%);
+  }
+}
+
+/* Keyframes ends */
+body{
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Noto Serif JP', serif;
+/*  background-color: #D9D9D9;*/
+background-color: white;
+  background-image: url(assets/background.png);
+  background-size: cover;
+  background-position: center;
+}
+
+h2{
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--black);
+}
+h3{
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+img {
+  block-size: auto;
+  max-inline-size: 100%;
+  vertical-align: middle;
+}
+
+header h2,h3{
+ text-align: center;
+}
+header h2{
+  padding-top: 5vh;
+}
+header h3{
+  padding-bottom: 5vh;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 3vh;
+}
+.logo svg{
+  width: 70px;
+}
+.hambar svg{
+  width: 60px;
+}
+.cloud svg{
+  width: 100px;
+}
+.dashedTrail{
+  display: flex;
+    justify-content: center;
+}
+.dashedTrail svg{
+  width: 400px;
+
+}
+
+#animatedPath{
+  stroke-dasharray: 10 10;
+  stroke-dashoffset: 20;
+  animation: drawLine 7s linear forwards;
+}
+
+#welcomeSVG{
+  transform: translateX(-54%);
+  animation: welcome 7s linear forwards;
+}
+
+/* Footer starts */
+#footer{
+  display: none;
+  background-color: var(--orange);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  animation: slideUp 0.5s ease-in-out 0.2s both;
+  width: 100%;
+  z-index: 999;
+}
+.footerContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px;
+}
+.footerContainer h3{
+  color: white;
+}
+.snsContainer a{
+  text-decoration: none;
+}
+.snsContainer a svg{
+  width: 50px;
+}
+/* Footer ends */
+
+/* About section */
+
+.about{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+}
+.about #stars{
+  width: 150px;
+}
+.about .owl-carousel{
+  padding-bottom: 20px;
+}
+
+.about .owl-carousel .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: 111px;
+}
+.about .owl-carousel .item svg{
+  width: 100px !important;
+}
+.about .owl-carousel .item h4{
+  color: white;
+}
+.about .owl-carousel .item h5{
+  color: yellow;
+  font-size: 11px;
+}
+.about .owl-carousel{
+ background: url(assets/aboutSliderBackground.png);
+ background-size: cover;
+}
+/* About ends */
+
+/* Meal starts */
+.meal{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+.meal #stars{
+  width: 150px;
+}
+.meal .owl-carousel{
+  margin-top: 10vh;
+}
+.meal .owl-carousel .item .foodContainer{
+  height: 134px;
+  background: linear-gradient(61deg, #FE8601 -3.71%, #FE6E01 3.22%, #FD5B01 11.04%, #FD5001 19.05%, #FD4C01 27.49%, #FD5101 30.77%, #FE7001 51.3%, #FE7B01 62.89%);
+  padding: 5vh 2vh;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal .owl-carousel .item .foodContainer h4{
+    color: white;
+    font-size: 14px;
+}
+.meal .owl-carousel .item .foodContainer svg{
+  width: auto;
+}
+/* Meal Ends */
+
+/* ABout Sun co., ltd */
+.aboutSun{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+.aboutSuntag{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.aboutSuntag svg{
+ width: 60px;
+}
+.aboutSuntag h3{
+  margin: 0px 20px;
+}
+.aboutSunContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ margin: 10vh 4vh 6vh 4vh;
+}
+
+
+.aboutSunContent p{
+  color: var(--prefferedOrange);
+  margin-top: 5vh;
+}
+
+.aboutSun a{
+  text-decoration: none;
+  color: white;
+  background: var(--orange);
+  padding: 15px 60px;
+  border-bottom: 5px solid #BC7002;
+  border-left: 5px solid #BC7002;
+  margin-top: 5vh;
+}
+.aboutSun a:hover{
+  border-top: 5px solid #BC7002;
+  border-right: 5px solid #BC7002;
+  transition: 0.05s;
+}
+/* Gallery starts*/
+
+
+/* Embed */
+
+.embed {
+  overflow: hidden;
+  padding-block-start: 100%;
+  position: relative;
+}
+
+.embed--1-2 {
+  padding-top: calc(100% / (1 / 2));
+}
+
+.embed--2-1 {
+  padding-top: calc(100% / (2 / 1));
+}
+
+.embed--2-3 {
+  padding-top: calc(100% / (2 / 3));
+}
+
+.embed > * {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  padding: 0.25em;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Gallery  */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  overflow: hidden;
+
+}
+
+.gallery__item--h-2 {
+  grid-column-end: span 2;
+}
+
+.gallery__item--h-3 {
+  grid-column-end: span 3;
+}
+
+.gallery__item--v-2 {
+  grid-row-end: span 2;
+}
+
+.gallery__item--v-3 {
+  grid-row-end: span 3;
+}
+
+.gallarytag{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+       margin-bottom: 5vh;
+}
+
+.gallarytag svg{
+  width: 30px;
+
+}
+
+.gallarytag h3{
+
+     margin: 0 2vh;
+}
+.KodmoShukodoGallery{
+  margin-top: 10vh;
+}
+
+/*Q&A*/
+
+.sponser{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+.sponser #stars{
+  width: 150px;
+      margin-bottom: 10vh;
+}
+
+#sponser {
+  width: 300px;
+ margin-bottom: 3vh;
+}
+
+.owl-three .item svg{
+ width: 100px;
+}
+
+.qAndaSection{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+       margin-bottom: 5vh;
+}
+
+.qAndaSection h3{
+  margin: 0px 20px;
+}
+.qAndaSection svg{
+  width: 30px;
+}
+.qacontainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2vh;
+}
+.answerdisplaynone{
+  display: none;
+  transition:  2s ease;
+}
+.answer{
+  text-align: left;
+  padding: 20px 23px;
+  margin: 0vh 1.8vh;
+  border-top: none;
+  animation: slideDown 2s ease-out 2s both;
+  background: #BC7002;
+}
+.question{
+    background:  var(--orange);
+    border-bottom: 5px solid #BC7002;
+    border-left: 5px solid #BC7002;
+    padding: 20px 30px;
+    margin: 0px 10px;
+    text-align: left;
+    color: white;
+}
+
+.contact{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    position: relative;
+}
+
+#backgroundGrass{
+  position: absolute;
+  width: 150px;
+  bottom: 10vh;
+  left: 0;
+}
+
+.qrCode img{
+  width: 100px;
+}
+
+.contactMaterials{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 33px;
+}
+
+/* .marquee{
+  animation:marquee 10s linear infinite
+} */
+
+.animated-element {
+  opacity: 0;
+  transition: opacity 2s ease; 
+}
+.show {
+  opacity: 1;
+}
+.rotate {
+  transform: rotate(0);
+  transition: transform 1s ease;
+}
+
+@media screen and (min-width: 399px) {
+  .dashedTrail svg {
+    width: 900px;
+}
+
+
+.about .owl-carousel .item {
+    margin-top: 150px;
+}
+h3{
+  font-size: 27px;
+}
+h2{
+  font-size: 20px;
+}
+.meal .owl-carousel {
+  margin-top: 4vh;
+}
+}

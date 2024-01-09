@@ -158,12 +158,12 @@ nav{
 #animatedPath{
   stroke-dasharray: 10 10;
   stroke-dashoffset: 20;
-  animation: drawLine 7s linear forwards;
+  animation: drawLine 6s linear forwards;
 }
 
 #welcomeSVG{
   transform: translateX(-54%);
-  animation: welcome 7s linear forwards;
+  animation: welcome 6s linear forwards;
 }
 
 /* Footer starts */

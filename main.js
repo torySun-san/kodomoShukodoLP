@@ -1,14 +1,21 @@
 const dashedpath = document.getElementById('animatedPath');
+const dashedpathDesktop = document.getElementById('animatedPathDesktop');
 const scrollingDiv = document.getElementById('footer');
 const navDiv = document.getElementById('nav');
-const length = dashedpath.getTotalLength();
-const questions = document.querySelectorAll('.question');
 
-dashedpath.style.strokeDasharray = length;
-dashedpath.style.strokeDashoffset = length;
+const questions = document.querySelectorAll('.question');
+const lengthM = dashedpath.getTotalLength();
+const lengthD = dashedpathDesktop.getTotalLength();
+
+dashedpath.style.strokeDasharray = lengthM;
+dashedpath.style.strokeDashoffset = lengthM;
+
+dashedpathDesktop.style.strokeDasharray = lengthD;
+dashedpathDesktop.style.strokeDashoffset = lengthD;
 
 dashedpath.addEventListener('animationiteration', () => {
-    dashedpath.style.strokeDashoffset = length;
+    dashedpath.style.strokeDashoffset = lengthM;
+    dashedpathDesktop.style.strokeDashoffset = lengthD;
 });
 
 let lastScrollPosition = 0;

@@ -53,7 +53,17 @@ time, mark, audio, video {
 }
 /* Keyframes starts*/
 
+/* For IOS compatibility */
 
+html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: auto !important;
+}
+html.ios,
+html.ios body {
+  height: initial !important;
+}
+/*  */
 @keyframes drawLine {
   to {
     stroke-dashoffset: 0;
@@ -100,7 +110,6 @@ body{
   font-family: 'Noto Serif JP', serif;
 /*  background-color: #D9D9D9;*/
 background-color: white;
-  background-image: url(assets/background.png);
   background-size: contain;
   background-position: center;
 
@@ -567,6 +576,9 @@ h2{
     font-size: 35px;
 }
 h3 {
+  font-size: 35px;
+}
+header h3{
   font-size: 45px;
 }
 .cloud svg {
@@ -576,8 +588,6 @@ h3 {
 .about .owl-carousel .item svg {
   width: 162px !important;
 }
-
-
 .about .owl-carousel .item {
     margin-top: 150px;
 }
@@ -606,6 +616,9 @@ h3 {
  }
  #backgroundGrass {
   width: 500px;
+}
+.inqueryContainer{
+  padding: 0px 10vh;
 }
 }
 

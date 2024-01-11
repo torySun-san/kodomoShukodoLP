@@ -68,9 +68,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleScroll() {
     animatedElements.forEach(function (element) {
-      if (isInViewport(element)) {
-        var animation = element.dataset.animation || 'show';
+      var isInView = isInViewport(element);
+      var animation = element.dataset.animation || 'show';
+  
+      if (isInView) {
         element.classList.add(animation);
+      } else {
+        element.classList.remove(animation);
       }
     });
   }

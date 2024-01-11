@@ -517,7 +517,7 @@ nav{
 
 .animated-element {
   opacity: 0;
-  transition: opacity 2s ease; 
+  transition: opacity 1s ease; 
 }
 .show {
   opacity: 1;
